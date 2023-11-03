@@ -8,6 +8,7 @@ import java.time.Duration;
 
 public class Driver {
 
+
     //create a private constructor to remove access to this object
     private Driver(){}
 
@@ -73,5 +74,4 @@ public class Driver {
             driverPool.remove();
         }
     }
-
 }
