@@ -11,7 +11,7 @@ Feature: CRM employees page modules
 		When User is successfully logged in
 		Then User see the Employees page link
 		Then User click on the Employees page link
-		Then User will successfully lend in Employees page
+		Then User will successfully land in Employees page
 		And User can see the following modules on the top of the page
 			| Company Structure   |
 			| Find Employee       |
