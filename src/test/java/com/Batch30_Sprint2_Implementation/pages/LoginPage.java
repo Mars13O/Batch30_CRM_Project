@@ -31,4 +31,11 @@ public class LoginPage {
         // verification that we logged
     }
 
+
+    public void loginWithoutSubmit(String username, String password){
+        this.userName.sendKeys(username);
+        this.password.sendKeys(password);
+
+}
+
 }
