@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class T113_LogoutPage extends LoginPage{
 
 
@@ -26,9 +28,17 @@ public class T113_LogoutPage extends LoginPage{
         @FindBy(id = "user-block")
         public WebElement myProfile;
 
-
         @FindBy(xpath = "//span[.='Log out']")
         public WebElement logout;
+
+
+
+
+    @FindBy(xpath = "//div[@id='profile-menu-filter']/a")
+    public List<WebElement> myProfileOptionList;
+
+
+    // (xpath = "//div[@id='profile-menu-filter']")
 
 
 

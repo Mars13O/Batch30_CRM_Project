@@ -7,6 +7,11 @@ import com.Batch30_Sprint2_Implementation.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class T113_Logout_StepDefs {
     T113_LogoutPage logoutPage = new T113_LogoutPage();
@@ -30,5 +35,20 @@ public class T113_Logout_StepDefs {
     public void user_navigate_back_to_login_page() {
         BrowserUtils.verifyTitle("Authorization");
 
+    }
+
+    @Then("verify that below user profile options are displayed")
+    public void verify_that_below_user_profile_options_are_displayed(List<String> OptionList) {
+        List<String> myProfileOptions = new ArrayList<>();
+
+        List<WebElement> allOptions = logoutPage.myProfileOptionList;
+
+        for (WebElement each : logoutPage.myProfileOptionList) {
+
+            myProfileOptions.add(each.getText());
+
+        Assert.assertEquals(OptionList,myProfileOptions);
+
+        }
     }
 }
