@@ -5,34 +5,34 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class T113_LogoutPage {
+public class T113_LogoutPage extends LoginPage{
 
 
     public T113_LogoutPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(name="USER_LOGIN")
-    public WebElement username;
+    @FindBy(xpath = "//input[@type='text']")
+    public WebElement userInBox;
+
+    @FindBy(xpath = "//input[@type='password']")
+    public WebElement passwordInBox;
+
+    @FindBy(xpath = "//input[@class='login-btn']")
+    public WebElement loginButton;
 
 
 
-    @FindBy(xpath="//input[@name='USER_PASSWORD']")
-    public WebElement password;
-
-    @FindBy(xpath = "//input[@type='submit']")
-    public WebElement submit;
-
-
-    public void login(String username,String password) {
-        this.username.sendKeys(username);
-        this.password.sendKeys(password);
-        submit.click();
-
-    }
-
-        @FindBy(id = "#user-block")
+        @FindBy(id = "user-block")
         public WebElement myProfile;
+
+
+        @FindBy(xpath = "//span[.='Log out']")
+        public WebElement logout;
+
+
+
+
 
 
 
