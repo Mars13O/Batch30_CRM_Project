@@ -29,13 +29,13 @@ public class LoginPage {
         password.sendKeys(passwordStr);
         submit.click();
         // verification that we logged
+
     }
 
 
-    public void loginWithoutSubmit(String username, String password){
-        this.userName.sendKeys(username);
-        this.password.sendKeys(password);
+
+
 
 }
 
-}
+

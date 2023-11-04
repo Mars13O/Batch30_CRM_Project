@@ -23,11 +23,38 @@ public class US112LoginPage {
     public WebElement submit;
 
 
+    @FindBy(xpath = "//div[@class='errortext' and contains(text(), 'Incorrect login or password')]")
+    public WebElement errorMessage;
+
+
+    @FindBy(xpath = "//label[.='Remember me on this computer']")
+    public WebElement rememberMeText;
+
+
+    @FindBy(id = "USER_REMEMBER")
+    public WebElement rememberMeCheckbox;
+
+
+
+    public String getPasswordFieldType(){
+        return password.getAttribute("type");
+    }
+
+
+
+
+
+
     public void login(String username,String password){
         this.username.sendKeys(username);
         this.password.sendKeys(password);
         submit.click();
 
-
     }
+
+    public void clickLoginButton(){
+        submit.click();
+    }
+
+
 }

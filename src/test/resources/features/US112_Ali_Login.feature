@@ -38,4 +38,32 @@ Feature: Default
 			| wrongUserName   | UserUser123   |
 			| salesmanager101 | wrongPassword |
 
+
+
+	@B30G18-153
+	Scenario:  "Please fill out this field" error message should be displayed if the password or username is empty
+		#Given user is on the login page
+		When the user login without username or password
+		Then the user should see Please fill out this field error message
+
+
+
+
+	@B30G18-154
+	Scenario: User can see "Remember Me" link exists and is clickable on the login page
+		#Given user is on the login page
+		Then user should see a link with the text Remember Me
+		And the Remember Me link should be clickable
+
+
+
+
+
+
+	@B30G18-155
+	Scenario: User should see the password in bullet signs by default
+		Given the user is on the login page
+		When they view the password input field
+		Then the password should be displayed as bullet signs
+
 	

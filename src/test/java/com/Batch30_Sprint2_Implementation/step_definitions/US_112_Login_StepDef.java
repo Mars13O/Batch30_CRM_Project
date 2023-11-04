@@ -4,9 +4,11 @@ import com.Batch30_Sprint2_Implementation.pages.US112LoginPage;
 import com.Batch30_Sprint2_Implementation.utilities.BrowserUtils;
 import com.Batch30_Sprint2_Implementation.utilities.ConfigurationReader;
 import com.Batch30_Sprint2_Implementation.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class US_112_Login_StepDef {
 
@@ -59,5 +61,50 @@ public class US_112_Login_StepDef {
 
         BrowserUtils.verifyTitle("Authorization");
     }
+
+
+    @When("the user login without username or password")
+    public void theUserLoginWithoutUsernameOrPassword() {
+
+        us112LoginPage.clickLoginButton();
+    }
+
+    @Then("the user should see Please fill out this field error message")
+    public void theUserShouldSeePleaseFillOutThisFieldErrorMessage() {
+
+        Assert.assertTrue(us112LoginPage.errorMessage.isDisplayed());
+    }
+
+
+    @Then("user should see a link with the text Remember Me")
+    public void userShouldSeeALinkWithTheTextRememberMe() {
+
+        us112LoginPage.rememberMeCheckbox.click();
+
+    }
+
+    @And("the Remember Me link should be clickable")
+    public void theRememberMeLinkShouldBeClickable() {
+
+        Assert.assertTrue(us112LoginPage.rememberMeCheckbox.isSelected());
+    }
+
+
+
+
+    @When("they view the password input field")
+    public void they_view_the_password_input_field() {
+
+    }
+
+
+    @Then("the password should be displayed as bullet signs")
+    public void the_password_should_be_displayed_as_bullet_signs() {
+
+        String passwordFieldType = us112LoginPage.getPasswordFieldType();
+        Assert.assertEquals("password",passwordFieldType);
+    }
+
+
 
 }
