@@ -6,7 +6,8 @@ import io.cucumber.java.en.Then;
 
 public class userStory125_definitions {
     @Given("the user is on the Company page")
-    public void the_user_is_on_the_company_page() {Driver.getDriver("https://login1.nextbasecrm.com/about/");
+    public void the_user_is_on_the_company_page() {
+        Driver.getDriver("https://login1.nextbasecrm.com/about/");
 
     }
     @Then("the user should see {string} module")
