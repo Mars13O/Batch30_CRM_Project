@@ -69,4 +69,16 @@ public class B30G018_SendMessage_StepDefinitions {
     public void userShouldVerifyThatTheMessageDeliveryRecipientShouldBeAllEmployeesByDefault() {
         messageBoxPage.allEmployeesButton.isDisplayed();
     }
+
+    @Then("User should be able to cancel sending message at any time before sending")
+    public void userShouldBeAbleToCancelSendingMessageAtAnyTimeBeforeSending() {
+        Driver.getDriver().switchTo().frame(messageBoxPage.messageInputBox);
+
+        messageBoxPage.textArea.sendKeys("Message Sent");
+
+        Driver.getDriver().switchTo().parentFrame();
+
+        messageBoxPage.cancelButton.click();
+
+    }
 }
