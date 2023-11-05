@@ -33,7 +33,7 @@ public class US119_AC_EmployeesStepDefs {
     @Given("User is on nextbasecrm page")
     public void user_is_on_nextbasecrm_page() {
         US119_AC_UserLoginPage.userName.sendKeys(ConfigurationReader.getProperty("HelpDesk_users"));
-        US119_AC_UserLoginPage.passWord.sendKeys(ConfigurationReader.getProperty("HelpDesk_users_password"));
+        US119_AC_UserLoginPage.passWord.sendKeys(ConfigurationReader.getProperty("password"));
         US119_AC_UserLoginPage.submit.click();
     }
 
@@ -50,7 +50,7 @@ public class US119_AC_EmployeesStepDefs {
     @Given("Hr User is on nextbasecrm page")
     public void hr_user_is_on_nextbasecrm_page() {
         US119_AC_UserLoginPage.userName.sendKeys(ConfigurationReader.getProperty("Hr_users"));
-        US119_AC_UserLoginPage.passWord.sendKeys(ConfigurationReader.getProperty("Hr_users_password"));
+        US119_AC_UserLoginPage.passWord.sendKeys(ConfigurationReader.getProperty("password"));
         US119_AC_UserLoginPage.submit.click();
         US119_AC_UserLoginPage.EmpBtn.click();
 
