@@ -20,6 +20,7 @@ public class US116_Upload_Image_File {
     @Then("user should comment box with upload image file button")
     public void user_should_comment_box_with_upload_image_file_button() {
 
+US116_Ilona.UploadIconButton.sendKeys("C:\\Users\\Steve\\Desktop\\Porshe.jpg");
 
     }
     @Then("user should be able to upload image and file")
