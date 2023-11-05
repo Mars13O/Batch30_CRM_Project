@@ -13,8 +13,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/Batch30_Sprint2_Implementation/step_definitions",
-        dryRun = true,
-        tags = " @wip",
+        dryRun = false,
+        tags = "@B30G18-139",
         publish = true //generating a report with public link
 )
 public class CukesRunner {}
