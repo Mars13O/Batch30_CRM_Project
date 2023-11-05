@@ -1,8 +1,8 @@
-@B30G18-131
+@important
 Feature: User should be able to send a message by filling the mandatory fields
 
-	
 
+	@B30G18-131
 	Scenario:
 		Given User is logged in to the CRM HomePage
 		When User clicks on Message Tab
