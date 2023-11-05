@@ -1,21 +1,21 @@
 package com.Batch30_Sprint2_Implementation.pages;
 
-
 import com.Batch30_Sprint2_Implementation.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+import java.util.List;
 
-    public LoginPage(){
+public class T113_LogoutPage extends LoginPage{
+
+
+    public T113_LogoutPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
     @FindBy(xpath = "//input[@type='text']")
     public WebElement userInBox;
-
-
 
     @FindBy(xpath = "//input[@type='password']")
     public WebElement passwordInBox;
@@ -24,11 +24,27 @@ public class LoginPage {
     public WebElement loginButton;
 
 
-    public void login(String userName, String password) {
-        userInBox.sendKeys(userName);
-        passwordInBox.sendKeys(password);
-        loginButton.click();
-        // verification that we logged
 
-    }
+        @FindBy(id = "user-block")
+        public WebElement myProfile;
+
+        @FindBy(xpath = "//span[.='Log out']")
+        public WebElement logout;
+
+
+
+
+    @FindBy(xpath = "//div[@id='profile-menu-filter']/a")
+    public List<WebElement> myProfileOptionList;
+
+
+
+
+
+
+
+
+
+
+
 }
