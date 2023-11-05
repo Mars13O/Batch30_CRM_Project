@@ -34,4 +34,7 @@ public class MessageBoxPage extends LoginPage {
 
     @FindBy (xpath = "//span[@class='feed-add-post-del-but']")
     public WebElement allEmployeesButton;
+
+    @FindBy (xpath = "//button[@id='blog-submit-button-cancel']")
+    public WebElement cancelButton;
 }
