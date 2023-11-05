@@ -3,6 +3,7 @@ package com.Batch30_Sprint2_Implementation.step_definitions;
 
 
 
+
 import com.Batch30_Sprint2_Implementation.utilities.BrowserUtils;
 import com.Batch30_Sprint2_Implementation.utilities.ConfigurationReader;
 import com.Batch30_Sprint2_Implementation.utilities.Driver;
@@ -23,12 +24,10 @@ public class Hooks {
     //import the @Before coming from io.cucumber.java
     @Before (order = 1)
     public void setupMethod(){
-
-        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
     }
-
+/*
     //@Before (value = "@login", order = 2 )
     public void login_scenario_before(){
         System.out.println("---> @Before: RUNNING BEFORE EACH SCENARIO");
@@ -37,6 +36,8 @@ public class Hooks {
     /*
     @After will be executed automatically after EVERY scenario in the project.
      */
+
+
     @After
     public void teardownMethod(Scenario scenario){
 
@@ -47,13 +48,11 @@ public class Hooks {
 
         }
 
-
-
         BrowserUtils.sleep(2);
         Driver.closeDriver();
 
     }
-
+/*
     //@BeforeStep
     public void setupStep(){
         System.out.println("-----> @BeforeSTEP : Running before each step!");
@@ -64,5 +63,5 @@ public class Hooks {
         System.out.println("-----> @AfterSTEP : Running after each step!");
     }
 
-
+*/
 }
