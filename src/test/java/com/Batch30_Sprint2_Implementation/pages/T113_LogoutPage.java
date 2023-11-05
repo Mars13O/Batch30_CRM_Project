@@ -38,8 +38,6 @@ public class T113_LogoutPage extends LoginPage{
     public List<WebElement> myProfileOptionList;
 
 
-    // (xpath = "//div[@id='profile-menu-filter']")
-
 
 
 
