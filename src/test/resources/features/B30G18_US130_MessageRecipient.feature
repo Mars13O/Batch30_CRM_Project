@@ -1,7 +1,7 @@
-@B30G18-132
+@important
 Feature: The message delivery should be to 'All employees' by default.
 
-	
+	@B30G18-132
 	Scenario:
 		Given User is logged in to the CRM HomePage
 		When User clicks on Message Tab
