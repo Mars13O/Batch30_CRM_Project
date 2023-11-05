@@ -64,4 +64,9 @@ public class B30G018_SendMessage_StepDefinitions {
     public void userLeavesRecipientBoxEmptyByDeletingAllEmployeesButton() {
         messageBoxPage.allEmployeesButton.click();
     }
+
+    @Then("User should verify that the message delivery recipient should be All employees by default")
+    public void userShouldVerifyThatTheMessageDeliveryRecipientShouldBeAllEmployeesByDefault() {
+        messageBoxPage.allEmployeesButton.isDisplayed();
+    }
 }
