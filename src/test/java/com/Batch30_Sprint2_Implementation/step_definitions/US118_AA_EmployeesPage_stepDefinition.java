@@ -9,7 +9,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -43,7 +45,10 @@ US118_AA_Portal_Page us118AaPortalPage = new US118_AA_Portal_Page();
     @Then("User can see the following modules on the top of the page")
     public void user_can_see_the_following_modules_on_the_top_of_the_page(List<String> expectedMenuOptions) {
 
-        List<String> actualMenuOptions = new ArrayList<String>(Collections.singleton(US118_AA_EmployeePage_Page.pageMenuOptions(us118AaEmployeePagePage.employeesPageMenu, "main-buttons-item-link")));
+        List<String> actualMenuOptions = new ArrayList<>();
+       actualMenuOptions = US118_AA_EmployeePage_Page.pageMenuOptions(us118AaEmployeePagePage.employeesPageMenu, "main-buttons-item-link");
+        System.out.println(expectedMenuOptions);
+        System.out.println(actualMenuOptions);
 
         Assert.assertTrue(actualMenuOptions.contains(expectedMenuOptions));
 

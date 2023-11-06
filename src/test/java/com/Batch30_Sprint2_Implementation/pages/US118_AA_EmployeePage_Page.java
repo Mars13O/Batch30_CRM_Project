@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class US118_AA_EmployeePage_Page {
@@ -22,11 +23,11 @@ public class US118_AA_EmployeePage_Page {
     @FindBy(xpath = "(//a[@class='main-buttons-item-link'])[4]")
     public List<WebElement> moreOptions;
 
-    public static String pageMenuOptions(List<WebElement> modulesOption, String attributeValue){
-        String result ="";
+    public static List<String> pageMenuOptions(List<WebElement> modulesOption, String attributeValue){
+        List<String> result = new ArrayList<>();
         for (WebElement each : modulesOption) {
             if (each.getAttribute("class").equals(attributeValue)){
-                result = each.getText();
+               result.add(each.getText());
 
             }
         }
