@@ -17,14 +17,13 @@ Feature: Default
   Scenario:  All user types should be able to display company structure.
     Given User is on nextbasecrm page
     When User clicks Employees Menu button
-    Then User sees "(1) Company Structure" in title
+    Then User sees "Company Structure" in title
 
 
   @B30G18-137
   Scenario: Hr user should be able to add a department from the company structure.
     Given Hr User is on nextbasecrm page
     When User clicks Employees Menu button
-    #And Hr User clicks Company Structure button
     Then Hr User clicks "ADD DEPARTMENT" button
 
 
@@ -32,5 +31,5 @@ Feature: Default
   Scenario: There is no “ADD DEPARTMENT” option for Helpdesk and Marketing users.
     Given User is on nextbasecrm page
     When User clicks Employees Menu button
-   # Then User Helpdesk sees no "ADD DEPARTMENT" option
-   # Then User Marketing sees no "ADD DEPARTMENT" option
+    Then User Helpdesk sees no "ADD DEPARTMENT" option
+    Then User Marketing sees no "ADD DEPARTMENT" option
